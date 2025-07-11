@@ -1,19 +1,26 @@
-# Containers Toolkit
+# 🧰 Containers Toolkit
 
-Reusable Java toolkit for managing Docker containers using Testcontainers in integration and black-box tests.
+**Reusable Java toolkit for orchestrating Docker containers in integration and black-box tests using [Testcontainers](https://www.testcontainers.org/).**
 
-## 🔧 Features
+---
 
-- Interface-based design: `ContainerManager`, `ContainerProvider`
-- Supports databases like PostgreSQL out of the box
-- Clean separation of orchestration and lifecycle
-- Easily extendable to Kafka, Redis, or cloud emulators
+## 🚀 Features
+
+- ✅ Interface-driven architecture (`ContainerManager`, `ContainerProvider`)
+- 🐘 Out-of-the-box PostgreSQL support
+- 🚀 Spring Boot container manager with health check support
+- 🔌 Clean separation between orchestration and container lifecycle
+- 🔧 Easily extendable to Redis, Kafka, or cloud service emulators
+
+---
 
 ## 📦 Installation
 
+Build and install locally:
+
 ```bash
 mvn clean install
-```
+
 
 ## 🧪 How to Use
 
@@ -42,10 +49,22 @@ orchestrator.startAll();
 com.testing.containers
 ├── core
 │   ├── ContainerOrchestrator.java
-│   ├── interfaces/
+│   └── interfaces/
 ├── managers/
+│   ├── DatabaseContainerManager.java
+│   └── SpringBootContainerManager.java
 ├── providers/
+│   └── PostgresContainerProvider.java
 └── utils/
+
+```
+## 🔧 Supported Containers
+
+```
+Container Type	 Provider Class	            Notes
+PostgreSQL	     PostgresContainerProvider	Ready with alias + wait
+Spring Boot	     SpringBootContainerManager	Supports health checks
+
 ```
 
 ## 📄 License
